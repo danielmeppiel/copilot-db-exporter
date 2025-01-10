@@ -1,5 +1,3 @@
-# This file contains documentation for the project.
-
 # db-schema-generator
 
 This tool will make GitHub Copilot more accurately generate SQL code and Database related code via Chat and Inline Chat (Code Autocompletion is not yet using the Copilot Instructions file).
