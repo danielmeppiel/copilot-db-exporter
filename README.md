@@ -3,14 +3,14 @@
 This tool will make GitHub Copilot more accurately generate SQL code and Database related code via Chat and Inline Chat (Code Autocompletion is not yet using the Copilot Instructions file).
 
 ## Overview
-The db-schema-generator project is a command-line tool that connects to a MySQL / PostgreSQL / Microsoft SQL Server database, retrieves the schema information, and generates a YAML representation of the database schema. The generated schema is appended to the file `.github/copilot-instructions.mdm`. 
+The db-schema-generator project is a command-line tool that connects to a MySQL / PostgreSQL / Microsoft SQL Server database, retrieves the schema information, and generates a YAML representation of the database schema. The generated schema is appended to the file `.github/copilot-instructions.md`. 
 
 ## Features
 - Prompts for database connection details.
 - Establishes a secure connection to the Database.
 - Retrieves database schema information.
 - Converts schema information to YAML format.
-- Appends the YAML schema to a specified file.
+- Appends the YAML schema to `.github/copilot-instructions.md`.
 
 ## Requirements
 You can install the required dependencies by running:

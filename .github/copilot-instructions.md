@@ -1,7 +1,7 @@
 
 ### Application Database
 
-Please consider that the application under development uses a database in MySQL with the schema below.
+Please consider that the application under development uses a database in PostgreSQL with the schema below.
 Leverage this schema when generating any SQL queries, code or answers relative to interaction with the database. 
 
 Respect these rules when doing so:
@@ -11,6 +11,7 @@ Respect these rules when doing so:
 - Do not violate existing table relationships: always respect them. 
 
 ## Database schema in YAML format
+```yaml
 authors:
   columns:
   - name: author_id
@@ -128,3 +129,4 @@ suppliers:
   - name: contact_phone
     type: character varying
   relationships: []
+```

@@ -132,6 +132,7 @@ def main():
     schema = fetch_schema(connection)
     
     output_file = '.github/copilot-instructions.md'
+    os.makedirs('.github', exist_ok=True)
     if not os.path.exists(output_file):
         with open(output_file, 'w') as file:
             file.write("")
@@ -155,7 +156,10 @@ Respect these rules when doing so:
 
 ## Database schema in YAML format\n''')
         
+        file.write('```yaml\n')
         yaml.dump(schema, file)
+        file.write('```\n')
+        
     print(f"Schema has been appended to {output_file}")
 
 if __name__ == "__main__":
