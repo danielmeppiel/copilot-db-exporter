@@ -31,6 +31,7 @@ brew install unixodbc
 3. Run the script using Python:
 
 ```
+pipenv shell
 python src/generate_schema.py
 ```
 
