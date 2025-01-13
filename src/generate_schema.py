@@ -153,13 +153,14 @@ Respect these rules when doing so:
 - Never refer to a table or column that does not appear in the list below. 
 - Stick to the available tables and columns only. 
 - Do not violate existing table relationships: always respect them. 
+- Only use syntax that is available in {db_type_display[db_type]}
 
 ## Database schema in YAML format\n''')
         
         file.write('```yaml\n')
         yaml.dump(schema, file)
         file.write('```\n')
-        
+
     print(f"Schema has been appended to {output_file}")
 
 if __name__ == "__main__":
