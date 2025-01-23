@@ -1,7 +1,6 @@
-
 ### Application Database
 
-Please consider that the application under development uses a database in PostgreSQL with the schema below.
+Please consider that the application under development uses a database in MS SQL Server with the schema below.
 Leverage this schema when generating any SQL queries, code or answers relative to interaction with the database. 
 
 Respect these rules when doing so:
@@ -9,32 +8,33 @@ Respect these rules when doing so:
 - Never refer to a table or column that does not appear in the list below. 
 - Stick to the available tables and columns only. 
 - Do not violate existing table relationships: always respect them. 
+- Only use syntax that is available in MS SQL Server
 
 ## Database schema in YAML format
 ```yaml
 authors:
   columns:
   - name: author_id
-    type: integer
+    type: int
   - name: first_name
-    type: character varying
+    type: varchar
   - name: last_name
-    type: character varying
+    type: varchar
   - name: birthdate
     type: date
   relationships: []
 books:
   columns:
   - name: book_id
-    type: integer
+    type: int
   - name: title
-    type: character varying
+    type: varchar
   - name: author_id
-    type: integer
+    type: int
   - name: genre_id
-    type: integer
+    type: int
   - name: price
-    type: numeric
+    type: decimal
   - name: publication_date
     type: date
   relationships:
@@ -47,35 +47,35 @@ books:
 customers:
   columns:
   - name: customer_id
-    type: integer
+    type: int
   - name: first_name
-    type: character varying
+    type: varchar
   - name: last_name
-    type: character varying
+    type: varchar
   - name: email
-    type: character varying
+    type: varchar
   - name: phone
-    type: character varying
+    type: varchar
   - name: address
-    type: character varying
+    type: varchar
   relationships: []
 genres:
   columns:
   - name: genre_id
-    type: integer
+    type: int
   - name: genre_name
-    type: character varying
+    type: varchar
   relationships: []
 inventory:
   columns:
   - name: inventory_id
-    type: integer
+    type: int
   - name: book_id
-    type: integer
+    type: int
   - name: supplier_id
-    type: integer
+    type: int
   - name: quantity
-    type: integer
+    type: int
   relationships:
   - from_column: book_id
     to_column: book_id
@@ -86,32 +86,32 @@ inventory:
 order_items:
   columns:
   - name: order_item_id
-    type: integer
+    type: int
   - name: order_id
-    type: integer
+    type: int
   - name: book_id
-    type: integer
+    type: int
   - name: quantity
-    type: integer
+    type: int
   - name: price
-    type: numeric
+    type: decimal
   relationships:
-  - from_column: order_id
-    to_column: order_id
-    to_table: orders
   - from_column: book_id
     to_column: book_id
     to_table: books
+  - from_column: order_id
+    to_column: order_id
+    to_table: orders
 orders:
   columns:
   - name: order_id
-    type: integer
+    type: int
   - name: customer_id
-    type: integer
+    type: int
   - name: order_date
     type: date
   - name: total_amount
-    type: numeric
+    type: decimal
   relationships:
   - from_column: customer_id
     to_column: customer_id
@@ -119,14 +119,14 @@ orders:
 suppliers:
   columns:
   - name: supplier_id
-    type: integer
+    type: int
   - name: supplier_name
-    type: character varying
+    type: varchar
   - name: contact_name
-    type: character varying
+    type: varchar
   - name: contact_email
-    type: character varying
+    type: varchar
   - name: contact_phone
-    type: character varying
+    type: varchar
   relationships: []
 ```
